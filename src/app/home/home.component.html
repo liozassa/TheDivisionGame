@@ -1,0 +1,13 @@
+<div class="content">
+    <div class="current-number" [ngClass]="{'blink': blink}">
+        <span>{{current_number}}</span>
+    </div>
+    <div class="current-answer" [ngClass]="(current_answer === 'Wrong Answer!') ? 'worng' : 'correct'">{{current_answer | titlecase}}</div>
+    <div class="answer-buttons">
+        <answer-button class="ans-btn" *ngFor="let opt of getFizbazMap() | keyvalue" (click)="setAnswer(opt.key)" [name]="opt.key | titlecase"></answer-button>
+    </div>
+    <div class="score">
+        <h2>Your Score</h2>
+        <span class="correct">{{correct_count}}</span> | <span class="worng">{{worng_count}}</span>
+    </div>
+</div>

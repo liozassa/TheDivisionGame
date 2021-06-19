@@ -1,0 +1,19 @@
+<div class="toolbar-grid">
+    <div class="logo">
+      <img src="assets/icons/logo.svg">
+    </div>
+    <div class="app-name">
+      {{app_name}}
+    </div>
+    <div class="instructions">
+      <img src="assets/icons/info.svg" (click)="openInstructions('instructions-dialog')">
+    </div>
+</div>
+
+<la-dialog id="instructions-dialog">
+    <h2>Game Instructions</h2>
+    <span>Click the appropriate button.</span>
+    <ul>
+        <li *ngFor="let opt of getFizbazMap() | keyvalue"><b>{{opt.key | titlecase}}</b> - If the number is divided by {{opt.value}}.</li>
+    </ul>
+</la-dialog>

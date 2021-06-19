@@ -1,0 +1,81 @@
+.content {
+    display: grid;
+    grid-template-columns: 30% auto 30%;
+    grid-template-areas:    '. current-number .'
+                            '. current-answer .'
+                            'answer-buttons answer-buttons answer-buttons'
+                            '. score .';
+
+    .current-number {
+        grid-area: current-number;
+        font-size: 100px;
+        text-align: center;
+        padding: 20px;
+
+        &.blink {
+            animation: blinker 1s linear infinite;
+        }
+    }
+
+    .current-answer {
+        grid-area: current-answer;
+        font-size: 70px;
+        text-align: center;
+        height: 100px;
+
+        &.worng {
+            color: red;
+        }
+
+        &.correct {
+            color: green;
+        }
+
+        img {
+
+            &.worng {
+                background: url('/assets/icons/worng.svg') no-repeat center;
+                background-size: 70%;
+            }
+    
+            &.correct {
+                background: url('/assets/icons/correct.svg') no-repeat center;
+                background-size: 30px;
+            }
+        }
+    }
+
+    .answer-buttons {
+        grid-area: answer-buttons;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        row-gap: 25px;
+        justify-content: space-around; 
+
+        .ans-btn {
+            place-self: center;
+            width: 100%;
+        }
+    }
+
+    .score {
+        grid-area: score;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 35px;
+
+        .correct {
+            color: green;
+        }
+
+        .worng {
+            color: red;
+        }
+    }
+}
+
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

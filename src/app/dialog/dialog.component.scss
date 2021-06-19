@@ -1,0 +1,38 @@
+la-dialog {
+    /* modals are hidden by default */
+    display: none;
+
+    .la-dialog {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        overflow: auto;
+
+        .la-dialog-body {
+            padding: 20px;
+            background: #fff;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            float: right;
+        }
+    }
+
+    .la-dialog-background {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.75;
+        z-index: 900;
+    }
+}
+
+body.la-dialog-open {
+    overflow: hidden;
+}

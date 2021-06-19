@@ -1,0 +1,31 @@
+.toolbar-grid {
+    display: grid;
+    grid-template-columns: 5vw 20vw auto 10vw;
+    grid-template-areas: 'logo app-name . instructions';
+    align-items: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+
+    .logo {
+        grid-area: logo;
+        justify-self: start;
+
+        img {
+            height:25px;
+        }
+    }
+
+    .app-name {
+        grid-area: app-name;
+        justify-self: start;
+    }
+
+    .instructions {
+        grid-area: instructions;
+        justify-self: end;
+
+        img {
+            height:25px;
+        }
+    }
+}
